@@ -49,7 +49,7 @@ return (
 
       <hr />
 
-      <div className="d-flex flex-column gap-3">
+      <div className="d-flex flex-column">
 
 <Link
   to="/"
@@ -75,7 +75,7 @@ return (
   <FaBox /> Orders
 </Link>
             <button
-            className="btn btn-danger w-100 mt-5"
+            className="btn btn-danger w-100 mt-2"
             onClick={() => {
                 localStorage.removeItem("loggedIn");
                 window.location.reload();
