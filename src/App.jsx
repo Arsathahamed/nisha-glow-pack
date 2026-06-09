@@ -30,12 +30,7 @@ if (!isLoggedIn) {
 
       <Sidebar />
 
-      <div
-        style={{
-          // marginLeft: "270px",
-          padding: "40px"
-        }}
-      >
+      <div className="main-content">
 
         <Routes>
 

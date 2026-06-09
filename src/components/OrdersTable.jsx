@@ -122,28 +122,31 @@ const filteredOrders = orders.filter((order) =>
   order.phone?.includes(search)
 );
   return (
-    <div className="card mt-4 p-2 shadow">
+   <div className="card mt-4 p-3 p-md-4 shadow border-0">
 
-      <h3>Customer Orders</h3>
+     <h3 className="text-center mb-4">
+  Customer Orders
+</h3>
 <input
   type="text"
-  className="form-control mb-3"
+  className="form-control mb-4"
   placeholder="Search by Name or Phone"
   value={search}
   onChange={(e) => setSearch(e.target.value)}
 />
-      <table className="table table-hover align-middle">
+     <div className="table-responsive">
+  <table className="table table-hover align-middle">
 
         <thead>
           <tr>
             <th>ID</th>
-            <th style={{ minWidth: "154px" }}>Name</th>
+            <th>Name</th>
             <th>Phone</th>
             <th>Quantity</th>
-            <th style={{ minWidth: "154px" }}>Delivery</th>
+            <th>Delivery</th>
             <th>Amount</th>
-            <th style={{ minWidth: "125px" }}>Status</th>
-           <th style={{ minWidth: "246px" }}>
+            <th>Status</th>
+           <th>
             Action
             </th>
           </tr>
@@ -162,7 +165,7 @@ const filteredOrders = orders.filter((order) =>
              <td>₹{order.amount}</td>
              <td>
   <select
-    className="form-select form-select-sm"
+  className="form-select form-select-sm w-100"
     value={order.status || "Pending"}
     onChange={(e) =>
       updateStatus(order.id, e.target.value)
@@ -177,7 +180,7 @@ const filteredOrders = orders.filter((order) =>
 </td>
 
 <td>
-  <div className="d-flex justify-content-center gap-2 flex-wrap">
+  <div className="d-flex flex-column flex-lg-row justify-content-center gap-2">
 
     <button
       className="btn btn-warning btn-sm"
@@ -212,7 +215,8 @@ const filteredOrders = orders.filter((order) =>
 
         </tbody>
 
-      </table>
+    </table>
+</div>
 
     </div>
   );
