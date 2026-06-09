@@ -21,7 +21,7 @@ function Sidebar() {
         top: 0
       }}
     >
-     <div className="text-center mb-4">
+     <div className="mb-4">
   <img
     src={logo}
     alt="Nisha's"
@@ -66,7 +66,15 @@ function Sidebar() {
         >
           <FaBox /> Orders
         </Link>
-
+            <button
+            className="btn btn-danger w-100 mt-5"
+            onClick={() => {
+                localStorage.removeItem("loggedIn");
+                window.location.reload();
+            }}
+            >
+            Logout
+            </button>
       </div>
     </div>
   );

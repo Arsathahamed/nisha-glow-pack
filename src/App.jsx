@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-
+import Login from "./pages/Login";
 import Sidebar from "./components/Sidebar";
 
 import Dashboard from "./pages/Dashboard";
@@ -9,12 +9,22 @@ import Orders from "./pages/Orders";
 
 function App() {
 
+const [isLoggedIn, setIsLoggedIn] = useState(
+  localStorage.getItem("loggedIn") === "true"
+);
+
   const [editingOrder, setEditingOrder] =
     useState(null);
 
   const [refreshDashboard, setRefreshDashboard] =
     useState(0);
-
+if (!isLoggedIn) {
+  return (
+    <Login
+      setIsLoggedIn={setIsLoggedIn}
+    />
+  );
+}
   return (
     <BrowserRouter>
 
