@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/nisha_logo.png";
+import { FaCalculator } from "react-icons/fa";
 import {
   FaHome,
   FaPlusCircle,
@@ -74,6 +75,13 @@ return (
 >
   <FaBox /> Orders
 </Link>
+<Link
+  to="/calculator"
+  className="text-white text-decoration-none"
+  onClick={closeMenu}
+>
+  <FaCalculator /> Calculator
+</Link>  
             <button
             className="btn btn-danger w-100 mt-2"
             onClick={() => {
@@ -83,6 +91,7 @@ return (
             >
             Logout
             </button>
+          
       </div>
     </div>
   </>

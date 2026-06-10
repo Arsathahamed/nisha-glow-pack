@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Login from "./pages/Login";
 import Sidebar from "./components/Sidebar";
-
+import Calculator from "./pages/Calculator";
 import Dashboard from "./pages/Dashboard";
 import AddOrder from "./pages/AddOrder";
 import Orders from "./pages/Orders";
@@ -71,7 +71,13 @@ if (!isLoggedIn) {
             }
           />
 
+<Route
+  path="/calculator"
+  element={<Calculator />}
+/>          
+
         </Routes>
+        
 
       </div>
 
