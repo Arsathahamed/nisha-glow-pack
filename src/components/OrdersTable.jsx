@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase";
-
+import { useNavigate } from "react-router-dom";
 function OrdersTable({ setEditingOrder,setRefreshDashboard}) {
-
+const navigate = useNavigate();
  const [orders, setOrders] = useState([]);
 const [search, setSearch] = useState("");
 // const [editingOrder, setEditingOrder] = useState(null);
@@ -184,7 +184,10 @@ const filteredOrders = orders.filter((order) =>
 
     <button
       className="btn btn-warning btn-sm"
-      onClick={() => setEditingOrder(order)}
+      onClick={() => {
+  setEditingOrder(order);
+  navigate("/add-order");
+}}
     >
       Edit
     </button>
