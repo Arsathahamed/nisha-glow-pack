@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase";
 
 function OrderForm({ editingOrder, setEditingOrder }) {
-
+const navigate = useNavigate();
   const [formData, setFormData] = useState({
     customer_name: "",
     phone: "",
@@ -121,7 +122,7 @@ const finalQuantity =
 
       setEditingOrder(null);
 
-      window.location.reload();
+      navigate("/orders");
     }
 
   } else {
@@ -144,7 +145,7 @@ const finalQuantity =
 
       alert("Order Saved Successfully");
 
-      window.location.reload();
+     navigate("/orders");
     }
   }
 };
